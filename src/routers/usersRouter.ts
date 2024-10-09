@@ -5,7 +5,7 @@ const router:Router = exp.Router()
 
 router.get('/')
 
-router.post('/')
+router.post('/register',)
 
 export default router
 
