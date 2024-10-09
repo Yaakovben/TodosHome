@@ -29,3 +29,5 @@ exports.userSchema = new mongoose_1.default.Schema({
         Array: [exports.todoSchema]
     }
 });
+const userModel = mongoose_1.default.model("user", exports.userSchema);
+exports.default = userModel;

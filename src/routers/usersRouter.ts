@@ -1,11 +1,12 @@
 import exp,{Router} from 'express'
+import {register, getUsers}from '../controllers/userController'
 
-const router:Router = exp.Router()
+const router:Router = Router()
 
 
-router.get('/')
+router.get('/',getUsers)
 
-router.post('/register',)
+router.post('/register', register)
 
 export default router
-
+   

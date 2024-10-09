@@ -14,7 +14,6 @@ export const todoSchema:Schema<Todo> = new mongoose.Schema({
 })
 
 
-
 export const userSchema:Schema<User> = new mongoose.Schema({
     user_name:{
         type:String,
@@ -29,6 +28,7 @@ export const userSchema:Schema<User> = new mongoose.Schema({
         Array:[todoSchema]
     }
 })
+
 
 const userModel:Model<User> = mongoose.model("user",userSchema)
 

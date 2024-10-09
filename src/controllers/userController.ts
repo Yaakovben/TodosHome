@@ -1,19 +1,27 @@
 import {Request, Response} from 'express'
+import {createUser, getAllUsers} from '../services/userService'
 export const register = async (req:Request, res:Response):Promise<void> =>{
     try {
+        const idUser = await createUser(req.body)
         res.status(201).json({
-            msg:"user created sucsesfuly"
+            user_id: idUser,
+            msg:`User ${req.body.user_name} created `
+
         })
     } catch (err) {
-        res.status(401).json(`Error creating user: ,${err}`)
+        res.status(401).json((err as Error).message)
     }
 }
-export const get = async (req:Request, res:Response):Promise<void> =>{
+
+
+export const getUsers = async (req:Request, res:Response):Promise<void> =>{
     try {
+        const users = await getAllUsers()
         res.status(201).json({
-            msg:"this is users"
+            msg:"This is all users",
+            users:users
         })
     } catch (err) {
-        res.status(401).json(`Error get user: ,${err}`)
+        res.status(401).json((err as Error).message)
     }
 }

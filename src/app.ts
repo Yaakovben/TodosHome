@@ -12,7 +12,7 @@ app.use(exp.json())
 connectToMongo()
 
 app.use('/user',usersRouter)
-app.use('/todo',todosRouter)
+app.use('/todo',todosRouter)   
 
 
 const PORT:number = (process.env.PORT || 1010) as number
@@ -21,7 +21,7 @@ app.listen(PORT,() => { console.log(`Server is up and running, feel free to visi
 
   
    
-
+ 
 
 
    
